@@ -51,19 +51,21 @@ function SavedPage() {
 
       {/* NAVBAR */}
       <nav className="navbar">
-        <span className="nav-logo">GlamBot</span>
-        <div className="nav-links">
-          <a href="#">Discovery</a>
-          <a href="#" className="nav-active">
-            Saved <span className="heart">♥</span>
-          </a>
-          <a href="#">Routines</a>
-          <a href="#" className="nav-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-            </svg>
-          </a>
+        <div className="navbar-inner">
+          <span className="nav-logo">GlamBot</span>
+          <div className="nav-links">
+            <a href="#">Discovery</a>
+            <a href="#" className="nav-active">
+              Saved <span className="heart">♥</span>
+            </a>
+        
+            <a href="#" className="nav-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>
+            </a>
+          </div>
         </div>
       </nav>
 
