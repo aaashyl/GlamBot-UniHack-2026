@@ -24,7 +24,7 @@ function App() {
         {/* Saved Page path */}
         <Route path="/SavedPaged" component={SavedPage} />
 
-        {/* Product Discovery Page path */}
+        {/* Product Discovery Page path ! */}
         <Route path="/ProductDiscoveryPage" component={ProductDiscoveryPage} />
 
       </Switch>
