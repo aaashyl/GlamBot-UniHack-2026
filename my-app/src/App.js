@@ -1,10 +1,8 @@
 import './App.css';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
-import ProductDiscoveryPage from './components/ProductDiscoveryPage';
-import SavedProductsPage from './components/SavedProductsPage';
+import HomePage from './components/HomePage/HomePage';
 
 function App() {
   return (
@@ -15,6 +13,7 @@ function App() {
 
       {/* welcome message */}
       <WelcomePage />
+      {/* <WelcomePage /> */}
     </div>
   );
 }
