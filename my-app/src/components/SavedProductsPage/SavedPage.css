@@ -136,7 +136,7 @@
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 16px;  
+  margin-top: 20px;
 }
 
 .routine-btn {
@@ -150,7 +150,7 @@
   color: #8c6a4f;
   cursor: pointer;
   display: flex;
- 
+  
   align-items: center;
   gap: 14px;
   min-width: 220px;
@@ -191,12 +191,12 @@
   padding: 0 44px 0 18px;
   font-size: 15px;
   color: #6b4f35;
-  width: 220px;
-  height: 28px;
+  width: 260px;
+  height: 38px;
   outline: none;
   font-family: "Helvetica Neue", sans-serif;
   box-sizing: border-box;
-  line-height: 28px;
+  line-height: 38px;
 }
 
 .search-bar input::placeholder {
@@ -234,7 +234,56 @@
   overflow: hidden;
   cursor: pointer;
   transition: background 0.2s;
+  position:relative;
 }
+
+/* ── CARD HEART BUTTON ── */
+.card-heart-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #8c6a4f;
+  cursor: pointer;
+  z-index: 2;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s, transform 0.15s;
+}
+
+.card-heart-btn:hover {
+  transform: scale(1.2);
+}
+
+.card-heart-btn--saved {
+  color: #8b1a1a;
+}
+
+.product-card-image {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.product-card-image img {
+  width: 75%;
+  height: 85%;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1.5px solid #e0cfc0;
+  border-radius: 10px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+
 
 .product-card:hover {
   background: rgba(255, 252, 248, 0.92);
@@ -251,11 +300,17 @@
 }
 
 .product-card-image img {
-  width: 100%;
-  height: 100%;
+  width: 55%;        /* 👈 reduce this, was 75% */
+  height: 85%;
   object-fit: contain;
+  background: #ffffff;
+  border: 1.5px solid #ffffff;  /* 👈 change to white */
+  border-radius: 10px;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
+ 
 .product-card-placeholder {
   width: 100%;
   height: 100%;
