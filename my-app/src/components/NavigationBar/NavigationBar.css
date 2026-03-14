@@ -1,38 +1,56 @@
 .navbar {
-  position: relative;
-  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  width: 100vw; 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* Match the background color to the image to prevent gaps */
-  background-color: #f5ede4; 
-}
-
-.header-img {
-  height: 80px; /* Height of header */
-  display: block;
+  
+  padding: 10px 5%; 
+  background-color: #f5ede4;
+  box-sizing: border-box; 
 }
 
 .nav-overlay-content {
   display: flex;
   align-items: center;
-  gap: 40px;
-  padding-right: 50px; /* Move links/icons away from right edge */
+  gap: clamp(20px, 3vw, 40px);
   color: #8b7355;
-  font-family: 'Playfair Display', serif; /* Clean font for links */
+  font-family: 'Playfair Display', serif;
+}
+
+.nav-logo {
+  font-size: 30px;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: #8C6A4F;
+  letter-spacing: 2px;
+  margin: 0;
+  cursor: pointer;
 }
 
 .nav-links {
+  font-size: 20px;
   display: flex;
   list-style: none;
-  gap: 25px;
+  color: #8C6A4F;
+  gap: 40px;
   font-weight: 500;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-icons {
-  display: flex;
-  gap: 20px;
-  font-size: 24px;
-  cursor: pointer;
+.nav-profile-img{
+  height: 30px;
+  width: auto;
+}
+
+.nav-heart{
+  font-size: 30px;
+  vertical-align: middle;
+  line-height: 1;
+  display: inline-block;
 }
