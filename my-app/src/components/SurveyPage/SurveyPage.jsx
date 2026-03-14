@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./SurveyPage.css";
 import background from "../../assets/background.jpg";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const surveyQuestions = [
   {
