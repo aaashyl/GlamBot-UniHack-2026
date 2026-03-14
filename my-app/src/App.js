@@ -34,3 +34,16 @@ function App() {
 
 export default App;
 
+// import './App.css';
+
+// import ProductDiscovery from "./components/ProductDiscoveryPage/ProductDiscoveryPage";
+
+// function App() {
+//   return (
+//     <div>
+//       <ProductDiscovery />
+//     </div>
+//   );
+// }
+
+// export default App;
