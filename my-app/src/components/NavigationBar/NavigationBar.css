@@ -1,0 +1,38 @@
+.navbar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Match the background color to the image to prevent gaps */
+  background-color: #f5ede4; 
+}
+
+.header-img {
+  height: 80px; /* Height of header */
+  display: block;
+}
+
+.nav-overlay-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-right: 50px; /* Move links/icons away from right edge */
+  color: #8b7355;
+  font-family: 'Playfair Display', serif; /* Clean font for links */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
