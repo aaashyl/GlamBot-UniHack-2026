@@ -13,7 +13,38 @@
 
   font-family: "Playfair Display", sans-serif;
 }
+.routine-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  
+}
 
+.save-routine-btn {
+  font-family: "Playfair Display", serif;
+  background: #f6efe9;
+  border: 2px solid #d4b89a;
+  border-radius: 12px;
+  padding: 10px 18px;
+  color: #8c6a4f;
+  font-size: 16px;
+  cursor: pointer;
+  transform: translateY(4px);
+
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-routine-btn:hover {
+  background: #efe4db;
+}
+
+.heart-icon {
+  font-size: 18px;
+}
 /* ── NAVBAR ── */
 .navbar {
   position: relative;
@@ -94,6 +125,13 @@
   margin-bottom: 16px;
 }
 
+.routine-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #e6d7c9;
+}
 /* PANEL */
 .routine-panel {
   display: flex;
