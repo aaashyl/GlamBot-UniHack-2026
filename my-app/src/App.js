@@ -14,7 +14,7 @@
 
 import './App.css';
 
-import ProductDiscovery from "./components/ProductDiscoveryPage/ProductDiscoveryPage";
+import ProductDiscovery from "./components/ProductDiscoveryPage/ProductDiscovery";
 
 function App() {
   return (
