@@ -22,12 +22,12 @@
 
 import './App.css';
 
-import HomePage from "./components/HomePage/HomePage";
+import SignInPage from "./components/SignInPage/SignInPage";
 
 function App() {
   return (
     <div>
-      <HomePage />
+      <SignInPage />
     </div>
   );
 }
