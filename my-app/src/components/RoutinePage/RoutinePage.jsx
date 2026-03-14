@@ -1,6 +1,6 @@
 import "./RoutinePage.css";
 import { useState } from "react";
-  
+
 const routineSteps = [
   {
     id: 1,
@@ -18,26 +18,24 @@ const routineSteps = [
       "Sensitive skin",
       "Morning routine",
       "Night routine",
-      "Daily use",
-      "Removing makeup",
-      "Prepping skin for skincare"
+      "Daily use"
     ],
     stores: [
-        {
-            name: "Rhode",
-            url: "https://www.rhodeskin.com/products/pineapple-refresh-cleanser"
-        },
-        {
-            name: "Sephora",
-            url: "https://www.sephora.com"
-        }
-        ],
+      {
+        name: "Rhode",
+        url: "https://www.rhodeskin.com/products/pineapple-refresh-cleanser"
+      },
+      {
+        name: "Sephora",
+        url: "https://www.sephora.com"
+      }
+    ]
   },
 
   {
     id: 2,
     step: "Step 2: Toner",
-    name: "Watermelon Glow PHA+BHA Pore-Tight Toner",
+    name: "Watermelon Glow PHA+BHA Toner",
     brand: "Glow Recipe",
     price: "$55.00",
     description:
@@ -47,15 +45,19 @@ const routineSteps = [
       "Combination skin",
       "Oily skin",
       "Dull skin",
-      "Enlarged pores",
-      "Texture concerns",
       "Morning routine",
-      "Night routine",
-      "Hydration boost",
-      "Pore refining"
+      "Night routine"
     ],
-    store: "Sephora / Mecca",
-    url: "https://www.glowrecipe.com/products/watermelon-glow-pha-bha-pore-tight-toner",
+    stores: [
+      {
+        name: "Glow Recipe",
+        url: "https://www.glowrecipe.com/products/watermelon-glow-pha-bha-pore-tight-toner"
+      },
+      {
+        name: "Sephora",
+        url: "https://www.sephora.com"
+      }
+    ]
   },
 
   {
@@ -69,17 +71,21 @@ const routineSteps = [
     suitable: [
       "Dry skin",
       "Dehydrated skin",
-      "Combination skin",
       "Sensitive skin",
       "All skin types",
       "Morning routine",
-      "Night routine",
-      "Hydration boost",
-      "Plumping skin",
-      "Layering with actives"
+      "Night routine"
     ],
-    store: "Adore Beauty / Sephora",
-    url: "https://theordinary.com/en-au/hyaluronic-acid-2-b5-serum-100425.html",
+    stores: [
+      {
+        name: "The Ordinary",
+        url: "https://theordinary.com/en-au/hyaluronic-acid-2-b5-serum-100425.html"
+      },
+      {
+        name: "Sephora",
+        url: "https://www.sephora.com"
+      }
+    ]
   },
 
   {
@@ -93,18 +99,21 @@ const routineSteps = [
     suitable: [
       "Dry skin",
       "Normal skin",
-      "Combination skin",
       "Sensitive skin",
-      "Barrier repair",
-      "Night routine",
       "Morning routine",
-      "Long-lasting hydration",
-      "Cold weather skincare",
-      "Skin barrier support"
+      "Night routine"
     ],
-    store: "Mecca / Sephora",
-    url: "https://summerfridays.com/products/rich-cushion-cream",
-  },
+    stores: [
+      {
+        name: "Summer Fridays",
+        url: "https://summerfridays.com/products/rich-cushion-cream"
+      },
+      {
+        name: "Mecca",
+        url: "https://www.mecca.com.au"
+      }
+    ]
+  }
 ];
 
 function RoutinePage() {
@@ -113,29 +122,28 @@ function RoutinePage() {
   return (
     <div className="routine-container">
 
-      {/* NAVBAR */}
       <nav className="navbar">
-        <span className="nav-logo">GlamBot</span>
-        <div className="nav-links">
-          <a href="#">Discovery</a>
-          <a href="#" className="nav-active">
-            Saved <span className="heart">♥</span>
-          </a>
-          <a href="#" className="nav-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-            </svg>
-          </a>
+        <div className="navbar-inner">
+          <span className="nav-logo">GlamBot</span>
+          <div className="nav-links">
+            <a href="#">Discovery</a>
+            <a href="#" className="nav-active">
+              Saved <span className="heart">♥</span>
+            </a>
+
+            <a href="#" className="nav-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>
+            </a>
+          </div>
         </div>
       </nav>
 
-      {/* MAIN CONTENT */}
       <div className="routine-content">
 
-        <h1 className="routine-title">
-          Meet your skincare routine....
-        </h1>
+        <h1 className="routine-title">Meet your skincare routine....</h1>
 
         <div className="routine-panel">
 
@@ -152,7 +160,7 @@ function RoutinePage() {
                 <p className="routine-step">{step.step}</p>
 
                 <div className="routine-card">
-                  <div className="routine-image"/>
+                  <div className="routine-image" />
                   <p className="routine-name">{step.name}</p>
                   <p className="routine-brand">{step.brand}</p>
                   <p className="routine-price">{step.price}</p>
@@ -170,39 +178,43 @@ function RoutinePage() {
             </div>
 
             <div className="detail-description">
-                {selected.description.split("\n\n").map((p, i) => (
-                    <p key={i}>{p}</p>
-                ))}
-                </div>
+              {selected.description.split("\n\n").map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
 
             <div className="detail-box">
               <h3>Suitable for</h3>
-              <ul>
-                {selected.suitable.map((item) => (
-                  <li key={item}>{item}</li>
+              <div className="detail-tags">
+                {selected.suitable?.map((item) => (
+                    <span key={item} className="detail-tag">
+                    {item}
+                    </span>
                 ))}
-              </ul>
+                </div>
             </div>
 
             <div className="detail-box">
             <h3>Available at</h3>
 
-            {selected.stores.map((store) => (
+            <div className="store-tags">
+                {selected.stores?.map((store) => (
                 <a
-                key={store.name}
-                href={store.url}
-                target="_blank"
-                rel="noreferrer"
-                className="visit-btn"
+                    key={store.name}
+                    href={store.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="store-tag"
                 >
-                {store.name}
+                    {store.name}
                 </a>
-            ))}
+                ))}
+            </div>
             </div>
 
           </div>
-
         </div>
+
       </div>
     </div>
   );

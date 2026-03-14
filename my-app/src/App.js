@@ -1,11 +1,11 @@
 import './App.css';
 
-import WelcomePage from "./components/WelcomePage/WelcomePage";
+import RoutinePage from "./components/RoutinePage/RoutinePage";
 
 function App() {
   return (
     <div>
-      <WelcomePage />
+      <RoutinePage />
     </div>
   );
 }
