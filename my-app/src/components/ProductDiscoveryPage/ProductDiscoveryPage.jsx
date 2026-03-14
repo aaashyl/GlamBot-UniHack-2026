@@ -72,7 +72,7 @@ function ProductDiscovery() {
       {/* MAIN CONTENT */}
       <div className="saved-content">
         <div className="saved-header">
-          <h1 className="saved-title">Saved Products</h1>
+          <h1 className="saved-title">Discover Products</h1>
           <div className="search-bar">
             <input
               type="text"
