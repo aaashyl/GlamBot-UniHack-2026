@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "lucid": "^2.21.0",
+    "lucide-react": "^0.577.0",
+    "react": "^15.7.0",
+    "react-router-dom": "^4.3.1"
+  }
+}
