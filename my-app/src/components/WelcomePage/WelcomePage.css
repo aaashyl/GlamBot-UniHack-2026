@@ -1,51 +1,62 @@
 .welcome-container {
-  position: relative;
-  width: 100%;
   height: 100vh;
+  width: 100vw;
+
+  background-image: url("../../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .background-image {
-  width: 80%;
-  height: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  z-index: 0;
 }
 
 .welcome-content {
-  position: absolute;
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
 
 /* GLAMBOT TITLE */
 .title {
-  font-size: 72px;
+  font-size: 140px;
   font-family: "Playfair Display", serif;
   color: #8C6A4F;
   letter-spacing: 6px;
-  margin-bottom: 20px;
+
+  margin-bottom: 10px;
+  line-height: 1;
 }
 
 /* SUBTITLE */
 .subtitle {
-  font-size: 24px;
+  font-size: 35px;
   color: #9B7A5E;
-  font-family: "Helvetica Neue", sans-serif;
-  margin-bottom: 60px;
+  font-family: "Ubuntu", sans-serif;
+
+  margin-bottom: 120px;
 }
 
 /* BUTTON */
 .start-button {
   background-color: #8C6A4F;
   color: white;
-  font-size: 20px;
-  padding: 14px 36px;
+  font-size: 26px;
+  padding: 28px 90px;
   border: none;
-  border-radius: 10px;
+  border-radius: 14px;
   cursor: pointer;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+
   transition: 0.2s;
 }
 
