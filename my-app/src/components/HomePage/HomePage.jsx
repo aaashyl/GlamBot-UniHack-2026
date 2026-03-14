@@ -1,6 +1,5 @@
 import "./HomePage.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 // ── Import your product images ──
 import ceraveCleanserImg     from "../../assets/CeraveHydratingCleanser.jpg";
@@ -22,9 +21,9 @@ const STEPS = [
     explanation:
       "A toner is a fast-absorbing, water-like liquid applied after cleansing to remove leftover impurities, balance skin pH, and provide a quick hydration boost. Modern, alcohol-free formulas prep the skin for serums and moisturisers, making them ideal for adding active ingredients like hyaluronic acid or acne-fighting acids.",
     products: [
-      { id: 1, name: "Watermelon Glow PHA+BHA Toner", brand: "Glow Recipe", size: "150ml", price: "$38.00", image: glowRecipeImg },
-      { id: 2, name: "Niacinamide 10% + Zinc 1%",     brand: "The Ordinary", size: "30ml",  price: "$12.00", image: theOrdinaryImg },
-      { id: 3, name: "Hydrating Hyaluronic Acid Serum", brand: "CeraVe",     size: "30ml",  price: "$24.00", image: ceraveSerumImg },
+      { id: 1, name: "Watermelon Glow PHA+BHA Toner",    brand: "Glow Recipe",  size: "150ml", price: "$38.00", image: glowRecipeImg },
+      { id: 2, name: "Niacinamide 10% + Zinc 1%",        brand: "The Ordinary", size: "30ml",  price: "$12.00", image: theOrdinaryImg },
+      { id: 3, name: "Hydrating Hyaluronic Acid Serum",  brand: "CeraVe",       size: "30ml",  price: "$24.00", image: ceraveSerumImg },
     ],
   },
   {
@@ -34,9 +33,9 @@ const STEPS = [
     explanation:
       "A cleanser removes dirt, oil, makeup, and pollutants from the surface of your skin. Using one morning and night keeps pores clear and prevents breakouts. Choose a gentle, non-stripping formula suited to your skin type — foaming for oily skin, cream or micellar for dry or sensitive skin.",
     products: [
-      { id: 1, name: "Hydrating Facial Cleanser",   brand: "CeraVe",   size: "473ml", price: "$18.00", image: ceraveCleanserImg },
-      { id: 2, name: "Gentle Foaming Cleanser",     brand: "Cetaphil", size: "236ml", price: "$14.00", image: cetaphilImg },
-      { id: 3, name: "Anthelios SPF 50+ Invisible", brand: "La Roche-Posay", size: "50ml", price: "$36.00", image: laRocheSunscreenImg },
+      { id: 1, name: "Hydrating Facial Cleanser",   brand: "CeraVe",         size: "473ml", price: "$18.00", image: ceraveCleanserImg },
+      { id: 2, name: "Gentle Foaming Cleanser",     brand: "Cetaphil",       size: "236ml", price: "$14.00", image: cetaphilImg },
+      { id: 3, name: "Anthelios SPF 50+ Invisible", brand: "La Roche-Posay", size: "50ml",  price: "$36.00", image: laRocheSunscreenImg },
     ],
   },
   {
@@ -46,8 +45,8 @@ const STEPS = [
     explanation:
       "A moisturiser seals hydration into the skin and strengthens the skin barrier. Even oily skin needs one — skipping it can trigger excess oil production. Look for ceramides and hyaluronic acid for barrier repair, or retinol formulas at night if you're targeting fine lines (best from age 25+).",
     products: [
-      { id: 1, name: "Toleriane Double Repair Moisturiser", brand: "La Roche-Posay", size: "75ml", price: "$32.00", image: laRocheMoisturiserImg },
-      { id: 2, name: "Retinol Correxion Night Cream",       brand: "RoC",            size: "30ml", price: "$42.00", image: rocRetinolImg },
+      { id: 1, name: "Toleriane Double Repair Moisturiser", brand: "La Roche-Posay", size: "75ml",  price: "$32.00", image: laRocheMoisturiserImg },
+      { id: 2, name: "Retinol Correxion Night Cream",       brand: "RoC",            size: "30ml",  price: "$42.00", image: rocRetinolImg },
       { id: 3, name: "Hydrating Facial Cleanser",           brand: "CeraVe",         size: "473ml", price: "$18.00", image: ceraveCleanserImg },
     ],
   },
@@ -67,18 +66,18 @@ const STEPS = [
 
 // ── Individual Step Section ──
 function StepSection({ step, savedIds, onToggleSave }) {
-  const [open, setOpen]           = useState(false);
-  const [carouselIdx, setIdx]     = useState(0);
+  const [open, setOpen]       = useState(false);
+  const [carouselIdx, setIdx] = useState(0);
 
   const prev = () => setIdx((i) => Math.max(0, i - 1));
   const next = () => setIdx((i) => Math.min(step.products.length - 1, i + 1));
 
-  // show 3 products (or fewer if less available), starting at carouselIdx
   const visible = step.products.slice(carouselIdx, carouselIdx + 3);
 
   return (
     <div className="step-section">
-      {/* Step heading */}
+
+      {/* Step heading + toggle */}
       <div className="step-heading">
         <div>
           <span className="step-label">{step.step}: {step.label}</span>
@@ -103,7 +102,7 @@ function StepSection({ step, savedIds, onToggleSave }) {
       {/* Horizontal product carousel */}
       <div className="carousel-row">
         <button
-          className="carousel-arrow carousel-arrow--left"
+          className="carousel-arrow"
           onClick={prev}
           disabled={carouselIdx === 0}
         >
@@ -126,7 +125,9 @@ function StepSection({ step, savedIds, onToggleSave }) {
                   <img src={product.image} alt={product.name} className="card-img" />
                 </div>
                 <div className="card-info">
-                  <span className="card-option">{step.label} option {carouselIdx + visible.indexOf(product) + 1}</span>
+                  <span className="card-option">
+                    {step.label} option {carouselIdx + visible.indexOf(product) + 1}
+                  </span>
                   <span className="card-name">{product.name} — {product.size}</span>
                   <span className="card-price">{product.price}</span>
                 </div>
@@ -136,7 +137,7 @@ function StepSection({ step, savedIds, onToggleSave }) {
         </div>
 
         <button
-          className="carousel-arrow carousel-arrow--right"
+          className="carousel-arrow"
           onClick={next}
           disabled={carouselIdx + 3 >= step.products.length}
         >
@@ -149,7 +150,6 @@ function StepSection({ step, savedIds, onToggleSave }) {
 
 // ── Main HomePage ──
 function HomePage() {
-  const navigate   = useNavigate();
   const [saved, setSaved] = useState(new Set());
 
   const toggleSave = (key) => {
@@ -163,20 +163,20 @@ function HomePage() {
   return (
     <div className="home-container">
 
-      {/* NAVBAR */}
+      {/* NAVBAR — fully static, no routing */}
       <nav className="navbar">
         <div className="navbar-inner">
           <span className="nav-logo">GlamBot</span>
           <div className="nav-links">
-            <button className="nav-link" onClick={() => navigate("/discovery")}>Discovery</button>
-            <button className="nav-link nav-active" onClick={() => navigate("/home")}>Routines</button>
-            <button className="nav-icon-btn" onClick={() => navigate("/saved")}>♥</button>
-            <button className="nav-icon-btn" onClick={() => navigate("/profile")}>
+            <span className="nav-link">Discovery</span>
+            <span className="nav-link nav-active">Routines</span>
+            <span className="nav-icon">♥</span>
+            <span className="nav-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <circle cx="12" cy="8" r="4" />
                 <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
               </svg>
-            </button>
+            </span>
           </div>
         </div>
       </nav>
@@ -188,7 +188,6 @@ function HomePage() {
           <p className="home-subtitle">Select from the suggested options</p>
         </div>
 
-        {/* Steps */}
         {STEPS.map((step) => (
           <StepSection
             key={step.id}
@@ -198,9 +197,8 @@ function HomePage() {
           />
         ))}
 
-        {/* Build Routine CTA */}
         <div className="build-row">
-          <button className="build-btn" onClick={() => navigate("/routine")}>
+          <button className="build-btn">
             Build Routine →
           </button>
         </div>
