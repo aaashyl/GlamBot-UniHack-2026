@@ -1,0 +1,16 @@
+/* ── LAYOUT ── */
+.main-content {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+ 
+  background-image: url("../../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Helvetica Neue", sans-serif;
+}

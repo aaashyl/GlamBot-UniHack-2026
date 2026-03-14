@@ -1,5 +1,6 @@
 import "./SavedPage.css";
 import { useState } from "react";
+import NavigationBar from "../NavigationBar/NavigationBar";
 
 const savedProducts = [
   {
@@ -47,91 +48,74 @@ function SavedPage() {
   );
 
   return (
-    <div className="saved-container">
+    <>
+      <NavigationBar />
+      <div className="saved-container">
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="navbar-inner">
-          <span className="nav-logo">GlamBot</span>
-          <div className="nav-links">
-            <a href="#">Discovery</a>
-            <a href="#" className="nav-active">
-              Saved <span className="heart">♥</span>
-            </a>
-        
-            <a href="#" className="nav-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+        {/* MAIN CONTENT */}
+        <div className="saved-content">
+          <div className="saved-header">
+            <h1 className="saved-title">Saved Products</h1>
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Search"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <svg className="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="7" />
+                <line x1="16.5" y1="16.5" x2="22" y2="22" />
               </svg>
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      {/* MAIN CONTENT */}
-      <div className="saved-content">
-        <div className="saved-header">
-          <h1 className="saved-title">Saved Products</h1>
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            <svg className="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="7" />
-              <line x1="16.5" y1="16.5" x2="22" y2="22" />
-            </svg>
-          </div>
-        </div>
-
-        <div className="saved-panel">
-          {/* LEFT: Product List */}
-          <div className="product-list">
-            {filtered.map((product) => (
-              <div
-                key={product.id}
-                className={`product-item ${selected?.id === product.id ? "product-item--active" : ""}`}
-                onClick={() => setSelected(product)}
-              >
-                <div className="product-item-image" />
-                <div className="product-item-info">
-                  <span className="product-item-name">{product.name}</span>
-                  <span className="product-item-brand">{product.brand}</span>
-                </div>
-              </div>
-            ))}
-            {filtered.length === 0 && (
-              <p className="no-results">No products found.</p>
-            )}
+            </div>
           </div>
 
-          {/* RIGHT: Product Detail */}
-          <div className="product-detail">
-            {selected ? (
-              <>
-                <div className="detail-image-placeholder" />
-                <div className="detail-info">
-                  <p className="detail-category">{selected.category}</p>
-                  <h2 className="detail-name">{selected.name}</h2>
-                  <p className="detail-brand">{selected.brand}</p>
-                  <p className="detail-description">{selected.description}</p>
-                  <div className="detail-tags">
-                    {selected.tags.map((tag) => (
-                      <span key={tag} className="detail-tag">{tag}</span>
-                    ))}
+          <div className="saved-panel">
+            {/* LEFT: Product List */}
+            <div className="product-list">
+              {filtered.map((product) => (
+                <div
+                  key={product.id}
+                  className={`product-item ${selected?.id === product.id ? "product-item--active" : ""}`}
+                  onClick={() => setSelected(product)}
+                >
+                  <div className="product-item-image" />
+                  <div className="product-item-info">
+                    <span className="product-item-name">{product.name}</span>
+                    <span className="product-item-brand">{product.brand}</span>
                   </div>
                 </div>
-              </>
-            ) : (
-              <p className="detail-empty">Select a product to view details.</p>
-            )}
+              ))}
+              {filtered.length === 0 && (
+                <p className="no-results">No products found.</p>
+              )}
+            </div>
+
+            {/* RIGHT: Product Detail */}
+            <div className="product-detail">
+              {selected ? (
+                <>
+                  <div className="detail-image-placeholder" />
+                  <div className="detail-info">
+                    <p className="detail-category">{selected.category}</p>
+                    <h2 className="detail-name">{selected.name}</h2>
+                    <p className="detail-brand">{selected.brand}</p>
+                    <p className="detail-description">{selected.description}</p>
+                    <div className="detail-tags">
+                      {selected.tags.map((tag) => (
+                        <span key={tag} className="detail-tag">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <p className="detail-empty">Select a product to view details.</p>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

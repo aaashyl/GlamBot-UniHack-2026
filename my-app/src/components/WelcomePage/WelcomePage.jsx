@@ -1,5 +1,6 @@
 import "./WelcomePage.css";
 import background from "../../assets/background.jpg";
+import { Link } from 'react-router-dom';
 
 function WelcomePage() {
   return (
@@ -18,9 +19,11 @@ function WelcomePage() {
           Lets solve your skincare needs....
         </p>
 
-        <button className="start-button">
-          Get started →
-        </button>
+        <Link to="/SurveyPage">
+          <button className="start-button">
+            Get Started
+          </button>
+        </Link>
       </div>
 
     </div>

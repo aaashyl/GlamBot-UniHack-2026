@@ -1,5 +1,6 @@
 import "./ProductDiscoveryPage.css";
 import { useState } from "react";
+import NavigationBar from "../NavigationBar/NavigationBar";
 
 const discoverProducts = [
   {
@@ -319,167 +320,153 @@ function ProductDiscovery() {
   });
 
   return (
-    <div className="saved-container">
+    <>
+      <NavigationBar />
+      <div className="saved-container">
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="navbar-inner">
-          <span className="nav-logo">GlamBot</span>
-          <div className="nav-links">
-            <a href="#" className="nav-active">Discovery</a>
-            <a href="#">Saved <span className="heart">♥</span></a>
-            <a href="#" className="nav-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+        {/* MAIN CONTENT */}
+        <div className="saved-content">
+          <div className="saved-header">
+            <h1 className="saved-title">Discover Products</h1>
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Search by name, brand, skin type..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <svg className="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="7" />
+                <line x1="16.5" y1="16.5" x2="22" y2="22" />
               </svg>
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      {/* MAIN CONTENT */}
-      <div className="saved-content">
-        <div className="saved-header">
-          <h1 className="saved-title">Discover Products</h1>
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search by name, brand, skin type..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            <svg className="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="7" />
-              <line x1="16.5" y1="16.5" x2="22" y2="22" />
-            </svg>
-          </div>
-        </div>
-
-        <div className="saved-panel">
-
-          {/* LEFT: Product List */}
-          <div className="product-list">
-            {filtered.map((product) => (
-              <div
-                key={product.id}
-                className={`product-item ${selected?.id === product.id ? "product-item--active" : ""}`}
-                onClick={() => setSelected(product)}
-              >
-                {/* Emoji placeholder — swap for <img src={product.image} /> once you have photos */}
-                <div className="product-item-image">
-                  <span className="product-emoji">{product.emoji}</span>
-                </div>
-                <div className="product-item-info">
-                  <span className="product-item-name">{product.name}</span>
-                  <span className="product-item-brand">{product.brand}</span>
-                  <span className="product-item-category">{product.category} · {product.price}</span>
-                </div>
-              </div>
-            ))}
-            {filtered.length === 0 && (
-              <p className="no-results">No products found for "{search}"</p>
-            )}
+            </div>
           </div>
 
-          {/* RIGHT: Product Detail */}
-          <div className="product-detail">
-            {selected ? (
-              <div className="detail-scroll">
+          <div className="saved-panel">
 
-                {/* Hero — swap inner emoji for <img> once you have product photos */}
-                <div className="detail-hero">
-                  <span className="detail-hero-emoji">{selected.emoji}</span>
-                  <div className="detail-rating-badge">
-                    <StarRow rating={selected.rating} />
+            {/* LEFT: Product List */}
+            <div className="product-list">
+              {filtered.map((product) => (
+                <div
+                  key={product.id}
+                  className={`product-item ${selected?.id === product.id ? "product-item--active" : ""}`}
+                  onClick={() => setSelected(product)}
+                >
+                  {/* Emoji placeholder — swap for <img src={product.image} /> once you have photos */}
+                  <div className="product-item-image">
+                    <span className="product-emoji">{product.emoji}</span>
+                  </div>
+                  <div className="product-item-info">
+                    <span className="product-item-name">{product.name}</span>
+                    <span className="product-item-brand">{product.brand}</span>
+                    <span className="product-item-category">{product.category} · {product.price}</span>
                   </div>
                 </div>
+              ))}
+              {filtered.length === 0 && (
+                <p className="no-results">No products found for "{search}"</p>
+              )}
+            </div>
 
-                <div className="detail-info">
-                  <p className="detail-category">{selected.category}</p>
-                  <h2 className="detail-name">{selected.name}</h2>
-                  <p className="detail-brand">{selected.brand} · <strong>{selected.price}</strong></p>
+            {/* RIGHT: Product Detail */}
+            <div className="product-detail">
+              {selected ? (
+                <div className="detail-scroll">
 
-                  {/* Age range banner */}
-                  <div className="age-banner">
-                    <span className="age-icon">🎂</span>
-                    <div>
-                      <span className="age-range">Best for ages {selected.ageRange}</span>
-                      <p className="age-note">{selected.ageNote}</p>
+                  {/* Hero — swap inner emoji for <img> once you have product photos */}
+                  <div className="detail-hero">
+                    <span className="detail-hero-emoji">{selected.emoji}</span>
+                    <div className="detail-rating-badge">
+                      <StarRow rating={selected.rating} />
                     </div>
                   </div>
 
-                  {/* About */}
-                  <p className="detail-description">{selected.about}</p>
+                  <div className="detail-info">
+                    <p className="detail-category">{selected.category}</p>
+                    <h2 className="detail-name">{selected.name}</h2>
+                    <p className="detail-brand">{selected.brand} · <strong>{selected.price}</strong></p>
 
-                  {/* Skin type compatibility */}
-                  <div className="skin-section">
-                    <p className="skin-section-title">Skin Type Compatibility</p>
-                    <div className="skin-grid">
-                      {selected.skinTypes.map((st) => (
-                        <div
-                          key={st.label}
-                          className={`skin-badge ${st.compatible ? "skin-badge--yes" : "skin-badge--no"}`}
-                        >
-                          <span className="skin-dot">{st.compatible ? "✓" : "✕"}</span>
-                          {st.label}
-                        </div>
+                    {/* Age range banner */}
+                    <div className="age-banner">
+                      <span className="age-icon">🎂</span>
+                      <div>
+                        <span className="age-range">Best for ages {selected.ageRange}</span>
+                        <p className="age-note">{selected.ageNote}</p>
+                      </div>
+                    </div>
+
+                    {/* About */}
+                    <p className="detail-description">{selected.about}</p>
+
+                    {/* Skin type compatibility */}
+                    <div className="skin-section">
+                      <p className="skin-section-title">Skin Type Compatibility</p>
+                      <div className="skin-grid">
+                        {selected.skinTypes.map((st) => (
+                          <div
+                            key={st.label}
+                            className={`skin-badge ${st.compatible ? "skin-badge--yes" : "skin-badge--no"}`}
+                          >
+                            <span className="skin-dot">{st.compatible ? "✓" : "✕"}</span>
+                            {st.label}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Pros & Cons */}
+                    <div className="pros-cons-row">
+                      <div className="pros-box">
+                        <p className="pros-cons-title">👍 Pros</p>
+                        <ul className="pros-cons-list">
+                          {selected.pros.map((p) => (
+                            <li key={p}><span className="check">✓</span>{p}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="cons-box">
+                        <p className="pros-cons-title">👎 Cons</p>
+                        <ul className="pros-cons-list">
+                          {selected.cons.map((c) => (
+                            <li key={c}><span className="cross">✕</span>{c}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="detail-tags">
+                      {selected.tags.map((tag) => (
+                        <span key={tag} className="detail-tag">{tag}</span>
                       ))}
                     </div>
-                  </div>
 
-                  {/* Pros & Cons */}
-                  <div className="pros-cons-row">
-                    <div className="pros-box">
-                      <p className="pros-cons-title">👍 Pros</p>
-                      <ul className="pros-cons-list">
-                        {selected.pros.map((p) => (
-                          <li key={p}><span className="check">✓</span>{p}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="cons-box">
-                      <p className="pros-cons-title">👎 Cons</p>
-                      <ul className="pros-cons-list">
-                        {selected.cons.map((c) => (
-                          <li key={c}><span className="cross">✕</span>{c}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="detail-tags">
-                    {selected.tags.map((tag) => (
-                      <span key={tag} className="detail-tag">{tag}</span>
-                    ))}
-                  </div>
-
-                  {/* Reviews */}
-                  <p className="reviews-title">Customer Reviews</p>
-                  {selected.reviews.map((r) => (
-                    <div key={r.name} className="review-card">
-                      <div className="review-header">
-                        <div>
-                          <span className="reviewer-name">{r.name}</span>
-                          <span className="review-date">{r.date}</span>
+                    {/* Reviews */}
+                    <p className="reviews-title">Customer Reviews</p>
+                    {selected.reviews.map((r) => (
+                      <div key={r.name} className="review-card">
+                        <div className="review-header">
+                          <div>
+                            <span className="reviewer-name">{r.name}</span>
+                            <span className="review-date">{r.date}</span>
+                          </div>
+                          <span className="review-stars">★ {r.stars}</span>
                         </div>
-                        <span className="review-stars">★ {r.stars}</span>
+                        <p className="review-text">{r.text}</p>
                       </div>
-                      <p className="review-text">{r.text}</p>
-                    </div>
-                  ))}
+                    ))}
 
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <p className="detail-empty">Select a product to view details.</p>
-            )}
-          </div>
+              ) : (
+                <p className="detail-empty">Select a product to view details.</p>
+              )}
+            </div>
 
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
