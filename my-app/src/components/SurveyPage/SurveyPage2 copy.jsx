@@ -120,7 +120,7 @@ export default function SurveyPage({ onComplete }) {
           <>
             <h2 className="survey-heading">{question.question}</h2>
 
-            {/* CENTERED single-column (Q1) */}
+            
             {question.type === "centered" && (
               <div className="survey-options-centered">
                 {question.options.map((opt) => (
@@ -135,7 +135,7 @@ export default function SurveyPage({ onComplete }) {
               </div>
             )}
 
-            {/* STANDARD options with icon (Q2) */}
+           
             {question.type === "options" && (
               <div className="survey-options">
                 {question.options.map((opt) => (
@@ -154,7 +154,7 @@ export default function SurveyPage({ onComplete }) {
               </div>
             )}
 
-            {/* MULTI-SELECT GRID (Q3, Q4) */}
+            
             {question.type === "multi-grid" && (
               <>
                 <p className="multi-hint">Select all that apply</p>
@@ -172,7 +172,7 @@ export default function SurveyPage({ onComplete }) {
               </>
             )}
 
-            {/* FOOTER: button centered, dots below */}
+            
             <div className="survey-footer">
               <button
                 className={`next-button ${!canProceed ? "disabled" : ""}`}
