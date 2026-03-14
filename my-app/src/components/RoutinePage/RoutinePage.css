@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
 
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Playfair Display", sans-serif;
 }
 
 /* ── NAVBAR ── */
@@ -140,6 +140,7 @@
 }
 
 .detail-description p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-bottom: 18px;
   line-height: 1.8;
   color: #7a5c42;
@@ -161,6 +162,7 @@
   background: #f2ece8;
   padding: 16px;
   border-radius: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .visit-btn {
@@ -174,4 +176,6 @@
   text-decoration: none;
   font-size: 25px;
   align-items: center;
+  font-family: "Playfair Display", serif;
 }
+
