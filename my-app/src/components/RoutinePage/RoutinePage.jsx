@@ -1,6 +1,6 @@
 import "./RoutinePage.css";
 import { useState } from "react";
-
+  
 const routineSteps = [
   {
     id: 1,
