@@ -1,11 +1,25 @@
+// import './App.css';
+
+// import WelcomePage from "./components/WelcomePage/WelcomePage";
+
+// function App() {
+//   return (
+//     <div>
+//       <WelcomePage />
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import './App.css';
 
-import WelcomePage from "./components/WelcomePage/WelcomePage";
+import ProductDiscovery from "./components/ProductDiscoveryPage/ProductDiscoveryPage";
 
 function App() {
   return (
     <div>
-      <WelcomePage />
+      <ProductDiscovery />
     </div>
   );
 }
