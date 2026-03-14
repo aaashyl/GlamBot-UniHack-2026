@@ -28,31 +28,35 @@
 
 /* GLAMBOT TITLE */
 .title {
-  font-size: 72px;
+  font-size: 140px;
   font-family: "Playfair Display", serif;
   color: #8C6A4F;
   letter-spacing: 6px;
-  margin-bottom: 20px;
+
+  margin-bottom: 10px;
+  line-height: 1;
 }
 
 /* SUBTITLE */
 .subtitle {
-  font-size: 24px;
+  font-size: 35px;
   color: #9B7A5E;
-  font-family: "Helvetica Neue", sans-serif;
-  margin-bottom: 60px;
+  font-family: "Ubuntu", sans-serif;
+
+  margin-bottom: 120px;
 }
 
 /* BUTTON */
 .start-button {
   background-color: #8C6A4F;
   color: white;
-  font-size: 20px;
-  padding: 14px 36px;
+  font-size: 26px;
+  padding: 28px 90px;
   border: none;
-  border-radius: 10px;
+  border-radius: 14px;
   cursor: pointer;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+
   transition: 0.2s;
 }
 
