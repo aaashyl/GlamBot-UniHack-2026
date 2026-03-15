@@ -66,12 +66,12 @@
 }
 
 .signin-container {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
+
 .signin-content {
     background-color: #F2ECE8 ;
     display: flex;
