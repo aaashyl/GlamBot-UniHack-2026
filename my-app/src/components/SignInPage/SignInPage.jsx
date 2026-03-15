@@ -2,7 +2,8 @@ import "./SignInPage.css";
 import { useState } from "react";
 
 
-function SignInPage({ hideNavBar = false }) {
+
+function SignInPage({ hideNavbar = false }) {
     const [emailFeedback, setEmailFeedback] = useState("");
     const [passwordFeedback, setPasswordFeedback] = useState("");
     const [emailOptions, setEmailOptions] = useState([]);
@@ -33,7 +34,7 @@ function SignInPage({ hideNavBar = false }) {
         }
 
         if (isValid) {
-            window.location.href = "/WelcomePage/WelcomePage";
+            window.location.href = "/HomePage";
         }
     };
 
@@ -60,8 +61,10 @@ function SignInPage({ hideNavBar = false }) {
     return (
         <div className="signin-container">
 
-            {/* NAVBAR */}
-            {!hideNavBar && ( 
+            {/* NAVBAR
+            {!hideNavbar && <NavigationBar />} */}
+
+            {/* {!hideNavbar && ( 
                 <nav className="navbar">
                     <div className="navbar-inner">
                         <span className="nav-logo">GlamBot</span>
@@ -79,7 +82,7 @@ function SignInPage({ hideNavBar = false }) {
                         </div>
                     </div>
                 </nav>
-            )}
+            )} */}
 
 
             {/* MAIN CONTENT */}
