@@ -145,6 +145,11 @@
 
 label[for="password"] {
     margin-top: 20px;
+    text-align: left;
+}
+
+label[for="email"] {
+    text-align: left;
 }
 
 .signin-form #email, .signin-form #password {
