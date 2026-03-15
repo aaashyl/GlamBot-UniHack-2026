@@ -1,5 +1,6 @@
 import "./HomePage.css";
 import { useState } from "react";
+import NavigationBar from "../NavigationBar/NavigationBar";
 
 // ── Import your product images ──
 import ceraveCleanserImg     from "../../assets/CeraveHydratingCleanser.jpg";
@@ -21,9 +22,9 @@ const STEPS = [
     explanation:
       "A toner is a fast-absorbing, water-like liquid applied after cleansing to remove leftover impurities, balance skin pH, and provide a quick hydration boost. Modern, alcohol-free formulas prep the skin for serums and moisturisers, making them ideal for adding active ingredients like hyaluronic acid or acne-fighting acids.",
     products: [
-      { id: 1, name: "Watermelon Glow PHA+BHA Toner",    brand: "Glow Recipe",  size: "150ml", price: "$38.00", image: glowRecipeImg },
-      { id: 2, name: "Niacinamide 10% + Zinc 1%",        brand: "The Ordinary", size: "30ml",  price: "$12.00", image: theOrdinaryImg },
-      { id: 3, name: "Hydrating Hyaluronic Acid Serum",  brand: "CeraVe",       size: "30ml",  price: "$24.00", image: ceraveSerumImg },
+      { id: 1, name: "Watermelon Glow PHA+BHA Toner",   brand: "Glow Recipe",  size: "150ml", price: "$38.00", image: glowRecipeImg },
+      { id: 2, name: "Niacinamide 10% + Zinc 1%",       brand: "The Ordinary", size: "30ml",  price: "$12.00", image: theOrdinaryImg },
+      { id: 3, name: "Hydrating Hyaluronic Acid Serum", brand: "CeraVe",       size: "30ml",  price: "$24.00", image: ceraveSerumImg },
     ],
   },
   {
@@ -163,46 +164,36 @@ function HomePage() {
   return (
     <div className="home-container">
 
-      {/* NAVBAR — fully static, no routing */}
-      <nav className="navbar">
-        <div className="navbar-inner">
-          <span className="nav-logo">GlamBot</span>
-          <div className="nav-links">
-            <span className="nav-link">Discovery</span>
-            <span className="nav-link nav-active">Routines</span>
-            <span className="nav-icon">♥</span>
-            <span className="nav-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </nav>
+      {/* NavigationBar component */}
+      <NavigationBar/>
 
       {/* PAGE BODY */}
-      <div className="home-content">
-        <div className="home-header">
-          <h1 className="home-title">Meet your skincare routine....</h1>
-          <p className="home-subtitle">Select from the suggested options</p>
-        </div>
+      <div className="main-content">
+        <div className="home-content">
 
-        {STEPS.map((step) => (
-          <StepSection
-            key={step.id}
-            step={step}
-            savedIds={saved}
-            onToggleSave={toggleSave}
-          />
-        ))}
+          <div className="home-header">
+            <h1 className="home-title">Meet your skincare routine....</h1>
+            <p className="home-subtitle">Select from the suggested options</p>
+          </div>
 
-        <div className="build-row">
-          <button className="build-btn">
-            Build Routine →
-          </button>
+          {STEPS.map((step) => (
+            <StepSection
+              key={step.id}
+              step={step}
+              savedIds={saved}
+              onToggleSave={toggleSave}
+            />
+          ))}
+
+          <div className="build-row">
+            <button className="build-btn">
+              Build Routine →
+            </button>
+          </div>
+
         </div>
       </div>
+
     </div>
   );
 }
