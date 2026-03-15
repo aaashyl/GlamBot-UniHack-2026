@@ -86,7 +86,7 @@
   margin-bottom: 28px;
 }
 
-.survey-option {
+ .survey-option {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -97,7 +97,16 @@
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: "Helvetica Neue", sans-serif;
+  text-align: left;
 }
+
+.option-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
+
 
 .survey-option:hover {
   background: rgba(196, 172, 145, 0.6);
