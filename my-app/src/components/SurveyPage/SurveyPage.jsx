@@ -127,7 +127,7 @@ export default function SurveyPage({ onComplete }) {
   const handleComplete = () => {
     if (!canProceed) return;
     if (onComplete) onComplete(answers);
-    navigate('/home');
+    navigate('/HomePage');
   };
 
   return (
