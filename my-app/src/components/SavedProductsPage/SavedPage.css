@@ -58,6 +58,8 @@
   font-family: "Playfair Display", serif;
   font-size: 34px;
   font-weight: 600;
+  text-align: left;
+  width: 100%;
   color: #8c6a4f;
   margin: 0;
 }

@@ -1,5 +1,8 @@
 import "./SignUpPage.css";
 import { useState } from "react";
+import NavigationBar from "../NavigationBar/NavigationBar";
+import background from "../../assets/background.jpg";
+
 
 function SignUpPage() {
     const [emailFeedback, setEmailFeedback] = useState("");
@@ -32,7 +35,7 @@ function SignUpPage() {
         }
 
         if (isValid) {
-            window.location.href = "/WelcomePage/WelcomePage";
+            window.location.href = "/HomePage";
         }
     };
 
@@ -57,11 +60,14 @@ function SignUpPage() {
     };
 
     return (
-        <div className="signin-container">
+        
+        <div className="signup-container">
 
 
       {/* NAVBAR */}
-      <nav className="navbar">
+      <NavigationBar />
+
+      {/* <nav className="navbar">
         <div className="navbar-inner">
           <span className="nav-logo">GlamBot</span>
           <div className="nav-links">
@@ -78,14 +84,14 @@ function SignUpPage() {
             </a>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       {/* MAIN CONTENT */}
-      <main className="signin-content">
-        <h1>Sign In</h1>
+      <main className="signup-content">
+        <h1>Sign Up</h1>
         <p>Save your skincare routines forever!</p>
 
-        <form className="signin-form" onSubmit={validateForm}>
+        <form className="signup-form" onSubmit={validateForm}>
             <label htmlFor="email">Email</label>
             <input
                 type="email"
@@ -116,7 +122,7 @@ function SignUpPage() {
             type="password"
             id="password"
             name="password"
-            placeholder="Enter your Password:"
+            placeholder="Enter a Password:"
             value={passwordValue}
             onChange={(e) => {
                 setPasswordValue(e.target.value);
@@ -125,7 +131,6 @@ function SignUpPage() {
             />
 
             <span className="password-feedback">{passwordFeedback}</span>
-            <a href="#" className="forgot-password">Forgot password?</a>
 
             <label className="remember-me">
                 <input
@@ -135,10 +140,8 @@ function SignUpPage() {
                 />
                 Remember me
             </label>
-
-            <p id="signup-now">New to GlamBot? <a href="#" className="signUP-btn">Sign up now</a></p>
             
-            <button className="signin-btn" type="submit">Sign In</button>
+            <button className="signin-btn" type="submit">Sign Up</button>
 
         </form>
       </main>

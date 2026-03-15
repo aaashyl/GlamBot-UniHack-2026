@@ -7,6 +7,8 @@ import HomePage from "./components/HomePage/HomePage";
 import RoutinePage from "./components/RoutinePage/RoutinePage";
 import ProductDiscoveryPage from "./components/ProductDiscoveryPage/ProductDiscoveryPage";
 import SavedPage from "./components/SavedProductsPage/SavedPage";
+import SignInPage from "./components/SignInPage/SignInPage";
+import SignUpPage from "./components/SignUpPage/SignUpPage";
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
           <Route path="/RoutinePage" component={RoutinePage} />
 
           <Route path="/ProductDiscoveryPage" component={ProductDiscoveryPage} />
+
+        {/* Sign In Page path ! */}
+        <Route path="/SignInPage" component={SignInPage} />
+
+        {/* Sign Up Page path ! */}
+        <Route path="/SignUpPage" component={SignUpPage} />
 
           <Route path="/SavedPage" component={SavedPage} />
 
