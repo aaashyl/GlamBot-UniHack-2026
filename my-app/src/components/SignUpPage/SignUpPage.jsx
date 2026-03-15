@@ -59,12 +59,12 @@ function SignUpPage() {
     };
 
     return (
-        
-        <div className="signin-container">
+        <>
+        <NavigationBar />
+
+        <div className="signup-container">
 
 
-      {/* NAVBAR */}
-      <NavigationBar />
 
       {/* <nav className="navbar">
         <div className="navbar-inner">
@@ -86,11 +86,11 @@ function SignUpPage() {
       </nav> */}
 
       {/* MAIN CONTENT */}
-      <main className="signin-content">
+      <main className="signup-content">
         <h1>Sign Up</h1>
         <p>Save your skincare routines forever!</p>
 
-        <form className="signin-form" onSubmit={validateForm}>
+        <form className="signup-form" onSubmit={validateForm}>
             <label htmlFor="email">Email</label>
             <input
                 type="email"
@@ -121,7 +121,7 @@ function SignUpPage() {
             type="password"
             id="password"
             name="password"
-            placeholder="Enter your Password:"
+            placeholder="Enter a Password:"
             value={passwordValue}
             onChange={(e) => {
                 setPasswordValue(e.target.value);
@@ -130,7 +130,6 @@ function SignUpPage() {
             />
 
             <span className="password-feedback">{passwordFeedback}</span>
-            <a href="#" className="forgot-password">Forgot password?</a>
 
             <label className="remember-me">
                 <input
@@ -146,7 +145,9 @@ function SignUpPage() {
         </form>
       </main>
     </div>
+    </>
     );
 }
+
 
 export default SignUpPage;

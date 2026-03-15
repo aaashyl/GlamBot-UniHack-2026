@@ -167,10 +167,10 @@ function HomePage() {
   };
 
   return (
-    <div className="home-container">
-
-      {/* NavigationBar component */}
-      <NavigationBar/>
+    <>
+      <NavigationBar />
+      <div className="home-container">
+      
 
       {/* PAGE BODY */}
       <div className="main-content">
@@ -200,6 +200,7 @@ function HomePage() {
       </div>
 
     </div>
+    </>
   );
 }
 
