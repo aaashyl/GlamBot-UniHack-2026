@@ -1,8 +1,10 @@
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import SurveyPage from "./components/SurveyPage/SurveyPage";
 import HomePage from "./components/HomePage/HomePage";
+import RoutinePage from "./components/RoutinePage/RoutinePage";
 import ProductDiscoveryPage from "./components/ProductDiscoveryPage/ProductDiscoveryPage";
 import SavedPage from "./components/SavedProductsPage/SavedPage";
 import SignInPage from "./components/SignInPage/SignInPage";
@@ -10,24 +12,20 @@ import SignUpPage from "./components/SignUpPage/SignUpPage";
 
 function App() {
   return (
-    <div className="App">
-      {/* The Switch ensures only one route renders at a time */}
-      <Switch>
+    <Router>
+      <div className="App">
 
-        {/* Welcome Page is the default entry point */}
-        <Route exact path="/" component={WelcomePage} />
+        <Switch>
 
-        {/* Survey Page path */}
-        <Route path="/SurveyPage" component={SurveyPage} />
+          <Route exact path="/" component={WelcomePage} />
 
-        {/* Home Page path */}
-        <Route path="/HomePage" component={HomePage} />
+          <Route path="/SurveyPage" component={SurveyPage} />
 
-        {/* Saved Page path */}
-        <Route path="/SavedPaged" component={SavedPage} />
+          <Route path="/HomePage" component={HomePage} />
 
-        {/* Product Discovery Page path ! */}
-        <Route path="/ProductDiscoveryPage" component={ProductDiscoveryPage} />
+          <Route path="/RoutinePage" component={RoutinePage} />
+
+          <Route path="/ProductDiscoveryPage" component={ProductDiscoveryPage} />
 
         {/* Sign In Page path ! */}
         <Route path="/SignInPage" component={SignInPage} />
@@ -35,10 +33,13 @@ function App() {
         {/* Sign Up Page path ! */}
         <Route path="/SignUpPage" component={SignUpPage} />
 
-      </Switch>
-    </div>
+          <Route path="/SavedPage" component={SavedPage} />
+
+        </Switch>
+
+      </div>
+    </Router>
   );
 }
 
 export default App;
-

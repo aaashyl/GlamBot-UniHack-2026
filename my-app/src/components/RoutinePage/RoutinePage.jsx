@@ -13,7 +13,7 @@ const routineSteps = [
     step: "Step 1: Cleanser",
     name: "Pineapple Refresh Cleanser",
     brand: "Rhode",
-    price: "$38.00",
+    price: "$52.00",
     image: rhodeCleanserImg,
     description:
       "The Rhode Pineapple Refresh Cleanser is a gentle daily cleanser designed to remove makeup, sunscreen, excess oil, and environmental impurities without stripping the skin of its natural moisture. As the first step in a skincare routine, cleansing is essential because it prepares the skin for the products that follow. This cleanser uses fruit enzymes derived from pineapple to help dissolve buildup on the skin’s surface while maintaining a soft, balanced complexion.\n\n\nIn your routine, this product should be used as the very first step both morning and night. Begin by wetting your face with lukewarm water, then massage a small amount of cleanser into the skin using circular motions. Focus on areas where oil and impurities tend to build up, such as the forehead, nose, and chin. After gently cleansing for about 30 seconds, rinse thoroughly and pat the skin dry with a clean towel.\n\nThe purpose of this step is to create a clean canvas for the rest of your routine. By removing dirt and oil, the skin becomes more receptive to toners, serums, and moisturisers applied afterwards. The formula is designed to cleanse effectively while keeping the skin barrier calm and hydrated, making it ideal for daily use and suitable for a wide range of skin types.",
