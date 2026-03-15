@@ -137,6 +137,7 @@ function SignUpPage() {
             </label>
 
             <p id="signup-now">New to GlamBot? <a href="#" className="signUP-btn">Sign up now</a></p>
+            
             <button className="signin-btn" type="submit">Sign In</button>
 
         </form>
