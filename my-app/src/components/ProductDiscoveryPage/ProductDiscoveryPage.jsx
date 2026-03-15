@@ -11,6 +11,7 @@ import laRocheSunscreenImg     from "../../assets/LaRochePosaySunscreen.jpg";
 import rocRetinolImg           from "../../assets/RoCRetinolCream.jpg";
 import theOrdinaryImg          from "../../assets/TheOrdinaryNiancinamide.jpg";
 import ultraVioletteImg        from "../../assets/UltraVioletteSPF50Sunscreen.jpg";
+import NavigationBar from "../NavigationBar/NavigationBar";
 
 const discoverProducts = [
   {
@@ -26,11 +27,12 @@ const discoverProducts = [
     about:
       "A non-foaming, soap-free cleanser that removes dirt and makeup without disrupting the skin barrier. Packed with ceramides and hyaluronic acid to keep skin soft and hydrated after every wash.",
     skinTypes: [
-      { label: "Dry Skin",       compatible: true  },
-      { label: "Normal Skin",    compatible: true  },
-      { label: "Sensitive Skin", compatible: true  },
-      { label: "Oily Skin",      compatible: false },
-      { label: "Acne-Prone",     compatible: false },
+      { label: "Dry Skin",          compatible: true  },
+      { label: "Normal Skin",       compatible: true  },
+      { label: "Sensitive Skin",    compatible: true  },
+      { label: "Combination Skin",  compatible: true },
+      { label: "Oily Skin",         compatible: false },
+      { label: "Acne-Prone",        compatible: false },
     ],
     pros: [
       "Maintains moisture barrier",
@@ -65,6 +67,7 @@ const discoverProducts = [
       { label: "Dry Skin",       compatible: true },
       { label: "Normal Skin",    compatible: true },
       { label: "Sensitive Skin", compatible: true },
+      { label: "Combination Skin",  compatible: true },
       { label: "Oily Skin",      compatible: true },
       { label: "Acne-Prone",     compatible: true },
     ],
@@ -101,6 +104,7 @@ const discoverProducts = [
       { label: "Dry Skin",       compatible: true },
       { label: "Normal Skin",    compatible: true },
       { label: "Sensitive Skin", compatible: true },
+      { label: "Combination Skin",  compatible: true },
       { label: "Oily Skin",      compatible: true },
       { label: "Acne-Prone",     compatible: true },
     ],
@@ -137,6 +141,7 @@ const discoverProducts = [
       { label: "Dry Skin",       compatible: false },
       { label: "Normal Skin",    compatible: true  },
       { label: "Sensitive Skin", compatible: true  },
+      { label: "Combination Skin",  compatible: true },
       { label: "Oily Skin",      compatible: true  },
       { label: "Acne-Prone",     compatible: true  },
     ],
@@ -173,6 +178,7 @@ const discoverProducts = [
       { label: "Dry Skin",       compatible: true  },
       { label: "Normal Skin",    compatible: true  },
       { label: "Sensitive Skin", compatible: false },
+      { label: "Combination Skin",  compatible: true },
       { label: "Oily Skin",      compatible: false },
       { label: "Acne-Prone",     compatible: false },
     ],
@@ -210,6 +216,7 @@ const discoverProducts = [
       { label: "Dry Skin",       compatible: false },
       { label: "Normal Skin",    compatible: true  },
       { label: "Sensitive Skin", compatible: false },
+      { label: "Combination Skin",  compatible: true },
       { label: "Oily Skin",      compatible: true  },
       { label: "Acne-Prone",     compatible: true  },
     ],
@@ -246,6 +253,7 @@ const discoverProducts = [
       { label: "Dry Skin",       compatible: false },
       { label: "Normal Skin",    compatible: true  },
       { label: "Sensitive Skin", compatible: false },
+      { label: "Combination Skin",  compatible: true },
       { label: "Oily Skin",      compatible: true  },
       { label: "Acne-Prone",     compatible: true  },
     ],
@@ -282,6 +290,7 @@ const discoverProducts = [
       { label: "Dry Skin",       compatible: true },
       { label: "Normal Skin",    compatible: true },
       { label: "Sensitive Skin", compatible: true },
+      { label: "Combination Skin",  compatible: true },
       { label: "Oily Skin",      compatible: true },
       { label: "Acne-Prone",     compatible: true },
     ],
@@ -318,6 +327,7 @@ const discoverProducts = [
       { label: "Dry Skin",       compatible: true  },
       { label: "Normal Skin",    compatible: true  },
       { label: "Sensitive Skin", compatible: false },
+      { label: "Combination Skin",  compatible: true },
       { label: "Oily Skin",      compatible: false },
       { label: "Acne-Prone",     compatible: false },
     ],
@@ -366,44 +376,29 @@ function ProductDiscovery() {
   });
 
   return (
-    <div className="saved-container">
+    <>
+      <NavigationBar />
+      <div className="saved-container">
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="navbar-inner">
-          <span className="nav-logo">GlamBot</span>
-          <div className="nav-links">
-            <a href="#" className="nav-active">Discovery</a>
-            <a href="#">Saved <span className="heart">♥</span></a>
-            <a href="#" className="nav-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+        {/* MAIN CONTENT */}
+        <div className="saved-content">
+          <div className="saved-header">
+            <h1 className="saved-title">Discover Products</h1>
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Search by name, brand, skin type..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <svg className="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="7" />
+                <line x1="16.5" y1="16.5" x2="22" y2="22" />
               </svg>
-            </a>
+            </div>
           </div>
-        </div>
-      </nav>
 
-      {/* MAIN CONTENT */}
-      <div className="saved-content">
-        <div className="saved-header">
-          <h1 className="saved-title">Discover Products</h1>
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search by name, brand, skin type..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            <svg className="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="7" />
-              <line x1="16.5" y1="16.5" x2="22" y2="22" />
-            </svg>
-          </div>
-        </div>
-
-        <div className="saved-panel">
+          <div className="saved-panel">
 
           {/* LEFT: Product List */}
           <div className="product-list">
@@ -428,10 +423,10 @@ function ProductDiscovery() {
             )}
           </div>
 
-          {/* RIGHT: Product Detail */}
-          <div className="product-detail">
-            {selected ? (
-              <div className="detail-scroll">
+            {/* RIGHT: Product Detail */}
+            <div className="product-detail">
+              {selected ? (
+                <div className="detail-scroll">
 
                 {/* Hero image */}
                 <div className="detail-hero">
@@ -441,91 +436,92 @@ function ProductDiscovery() {
                   </div>
                 </div>
 
-                <div className="detail-info">
-                  <p className="detail-category">{selected.category}</p>
-                  <h2 className="detail-name">{selected.name}</h2>
-                  <p className="detail-brand">{selected.brand} · <strong>{selected.price}</strong></p>
+                  <div className="detail-info">
+                    <p className="detail-category">{selected.category}</p>
+                    <h2 className="detail-name">{selected.name}</h2>
+                    <p className="detail-brand">{selected.brand} · <strong>{selected.price}</strong></p>
 
-                  {/* Age range banner */}
-                  <div className="age-banner">
-                    <span className="age-icon">🎂</span>
-                    <div>
-                      <span className="age-range">Best for ages {selected.ageRange}</span>
-                      <p className="age-note">{selected.ageNote}</p>
+                    {/* Age range banner */}
+                    <div className="age-banner">
+                      <span className="age-icon">🎂</span>
+                      <div>
+                        <span className="age-range">Best for ages {selected.ageRange}</span>
+                        <p className="age-note">{selected.ageNote}</p>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* About */}
-                  <p className="detail-description">{selected.about}</p>
+                    {/* About */}
+                    <p className="detail-description">{selected.about}</p>
 
-                  {/* Skin type compatibility */}
-                  <div className="skin-section">
-                    <p className="skin-section-title">Skin Type Compatibility</p>
-                    <div className="skin-grid">
-                      {selected.skinTypes.map((st) => (
-                        <div
-                          key={st.label}
-                          className={`skin-badge ${st.compatible ? "skin-badge--yes" : "skin-badge--no"}`}
-                        >
-                          <span className="skin-dot">{st.compatible ? "✓" : "✕"}</span>
-                          {st.label}
-                        </div>
+                    {/* Skin type compatibility */}
+                    <div className="skin-section">
+                      <p className="skin-section-title">Skin Type Compatibility</p>
+                      <div className="skin-grid">
+                        {selected.skinTypes.map((st) => (
+                          <div
+                            key={st.label}
+                            className={`skin-badge ${st.compatible ? "skin-badge--yes" : "skin-badge--no"}`}
+                          >
+                            <span className="skin-dot">{st.compatible ? "✓" : "✕"}</span>
+                            {st.label}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Pros & Cons */}
+                    <div className="pros-cons-row">
+                      <div className="pros-box">
+                        <p className="pros-cons-title">👍 Pros</p>
+                        <ul className="pros-cons-list">
+                          {selected.pros.map((p) => (
+                            <li key={p}><span className="check">✓</span>{p}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="cons-box">
+                        <p className="pros-cons-title">👎 Cons</p>
+                        <ul className="pros-cons-list">
+                          {selected.cons.map((c) => (
+                            <li key={c}><span className="cross">✕</span>{c}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="detail-tags">
+                      {selected.tags.map((tag) => (
+                        <span key={tag} className="detail-tag">{tag}</span>
                       ))}
                     </div>
-                  </div>
 
-                  {/* Pros & Cons */}
-                  <div className="pros-cons-row">
-                    <div className="pros-box">
-                      <p className="pros-cons-title">👍 Pros</p>
-                      <ul className="pros-cons-list">
-                        {selected.pros.map((p) => (
-                          <li key={p}><span className="check">✓</span>{p}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="cons-box">
-                      <p className="pros-cons-title">👎 Cons</p>
-                      <ul className="pros-cons-list">
-                        {selected.cons.map((c) => (
-                          <li key={c}><span className="cross">✕</span>{c}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="detail-tags">
-                    {selected.tags.map((tag) => (
-                      <span key={tag} className="detail-tag">{tag}</span>
-                    ))}
-                  </div>
-
-                  {/* Reviews */}
-                  <p className="reviews-title">Customer Reviews</p>
-                  {selected.reviews.map((r) => (
-                    <div key={r.name} className="review-card">
-                      <div className="review-header">
-                        <div>
-                          <span className="reviewer-name">{r.name}</span>
-                          <span className="review-date">{r.date}</span>
+                    {/* Reviews */}
+                    <p className="reviews-title">Customer Reviews</p>
+                    {selected.reviews.map((r) => (
+                      <div key={r.name} className="review-card">
+                        <div className="review-header">
+                          <div>
+                            <span className="reviewer-name">{r.name}</span>
+                            <span className="review-date">{r.date}</span>
+                          </div>
+                          <span className="review-stars">★ {r.stars}</span>
                         </div>
-                        <span className="review-stars">★ {r.stars}</span>
+                        <p className="review-text">{r.text}</p>
                       </div>
-                      <p className="review-text">{r.text}</p>
-                    </div>
-                  ))}
+                    ))}
 
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <p className="detail-empty">Select a product to view details.</p>
-            )}
-          </div>
+              ) : (
+                <p className="detail-empty">Select a product to view details.</p>
+              )}
+            </div>
 
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
