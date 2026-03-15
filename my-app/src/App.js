@@ -27,11 +27,9 @@ function App() {
 
           <Route path="/ProductDiscoveryPage" component={ProductDiscoveryPage} />
 
-        {/* Sign In Page path ! */}
-        <Route path="/SignInPage" component={SignInPage} />
+          <Route path="/SignInPage" component={SignInPage} />
 
-        {/* Sign Up Page path ! */}
-        <Route path="/SignUpPage" component={SignUpPage} />
+          <Route path="/SignUpPage" component={SignUpPage} />
 
           <Route path="/SavedPage" component={SavedPage} />
 
