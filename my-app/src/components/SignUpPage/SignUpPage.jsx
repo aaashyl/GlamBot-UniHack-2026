@@ -1,7 +1,6 @@
 import "./SignUpPage.css";
 import { useState } from "react";
 import NavigationBar from "../NavigationBar/NavigationBar";
-import background from "../../assets/background.jpg";
 
 
 function SignUpPage() {
@@ -60,12 +59,12 @@ function SignUpPage() {
     };
 
     return (
-        
+        <>
+        <NavigationBar />
+
         <div className="signup-container">
 
 
-      {/* NAVBAR */}
-      <NavigationBar />
 
       {/* <nav className="navbar">
         <div className="navbar-inner">
@@ -146,7 +145,9 @@ function SignUpPage() {
         </form>
       </main>
     </div>
+    </>
     );
 }
+
 
 export default SignUpPage;
