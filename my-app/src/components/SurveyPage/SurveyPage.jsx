@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./SurveyPage.css";
 import background from "../../assets/background.jpg";
-import { useNavigate } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 
 const surveyQuestions = [
@@ -86,7 +85,6 @@ const surveyQuestions = [
 export default function SurveyPage({ onComplete }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
-  const navigate = useNavigate();
 
   const question = surveyQuestions[currentStep];
   const isMulti = question?.type === "multi-grid";
@@ -127,7 +125,6 @@ export default function SurveyPage({ onComplete }) {
   const handleComplete = () => {
     if (!canProceed) return;
     if (onComplete) onComplete(answers);
-    navigate('/home');
   };
 
   return (
@@ -192,6 +189,7 @@ export default function SurveyPage({ onComplete }) {
         {/* FOOTER */}
         <div className="survey-footer">
           {isLast ? (
+            <Link to="/HomePage">
             <button
               className={`next-button ${!canProceed ? "disabled" : ""}`}
               onClick={handleComplete}
@@ -199,6 +197,7 @@ export default function SurveyPage({ onComplete }) {
             >
               Complete Survey →
             </button>
+          </Link>
           ) : (
             <button
               className={`next-button ${!canProceed ? "disabled" : ""}`}
