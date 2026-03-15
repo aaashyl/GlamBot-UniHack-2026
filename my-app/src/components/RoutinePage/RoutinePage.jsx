@@ -1,4 +1,5 @@
 import "./RoutinePage.css";
+import SignInPage from "../SignInPage/SignInPage";
 import { useState } from "react";
 
 import rhodeCleanserImg from "../../assets/rhode-cleanser.jpg";
@@ -240,6 +241,16 @@ function RoutinePage() {
         </div>
 
       </div>
+            {/* SIGN IN OVERLAY */}
+      {showLogin && (
+        <div className="overlay" onClick={() => setShowLogin(false)}>
+          <div className="overlay-card" onClick={(e) => e.stopPropagation()}>
+            <button className="overlay-close" onClick={() => setShowLogin(false)}>✕</button>
+            <SignInPage hideNavbar={true} />
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
