@@ -3,6 +3,7 @@ import { useState } from "react";
 import NavigationBar from "../NavigationBar/NavigationBar";
 import { Link } from "react-router-dom";
 
+
 // ── Import your product images ──
 import ceraveSerumImg        from "../../assets/ceraveHydratingSerum.jpg";
 import cetaphilImg           from "../../assets/CetaphilGentleFoamCleanser.jpg";

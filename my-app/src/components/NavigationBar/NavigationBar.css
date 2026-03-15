@@ -1,56 +1,119 @@
+/* ── NAVBAR ── */
 .navbar {
-  position: sticky;
+  /* We changed this to fixed or absolute so it sits on top of the homepage background */
+  position: fixed; 
   top: 0;
-  z-index: 1000;
-  
-  width: 100vw; 
+  left: 0;
+  z-index: 1000; /* High z-index to stay above background images */
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  /* Keep your original padding logic for centering content */
+  padding: 18px calc((100% - 980px) / 2);
+  box-sizing: border-box;
   
-  padding: 10px 5%; 
-  background-color: #f5ede4;
-  box-sizing: border-box; 
+  background: rgba(255, 250, 245, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 184, 154, 0.35);
 }
 
-.nav-overlay-content {
-  display: flex;
+.navbar-inner {
+  display: flex; /* Changed from contents to flex for better control */
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
-  gap: clamp(20px, 3vw, 40px);
-  color: #8b7355;
-  font-family: 'Playfair Display', serif;
 }
 
 .nav-logo {
-  font-size: 30px;
   font-family: "Playfair Display", serif;
-  font-weight: 800;
-  color: #8C6A4F;
+  font-size: 40px; /* Reduced slightly to fit better on laptop screens */
+  color: #6b4f35;
+  font-weight: 700;
   letter-spacing: 2px;
-  margin: 0;
-  cursor: pointer;
 }
 
 .nav-links {
-  font-size: 20px;
   display: flex;
-  list-style: none;
-  color: #8C6A4F;
+  align-items: center;
   gap: 40px;
-  font-weight: 500;
+}
+
+/* IMPORTANT: Target both 'a' tags AND React Router links */
+.nav-links a, 
+.nav-links .nav-link-item { 
+  text-decoration: none;
+  color: #8c6a4f;
+  font-size: 14px;
+  font-family: "Helvetica Neue", sans-serif;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: 0.3s ease;
   cursor: pointer;
-  margin: 0;
-  padding: 0;
 }
 
-.nav-profile-img{
-  height: 30px;
-  width: auto;
+.nav-links a:hover {
+  opacity: 1;
 }
 
-.nav-heart{
-  font-size: 30px;
-  vertical-align: middle;
-  line-height: 1;
-  display: inline-block;
+/* This matches the active state from our useState logic */
+.nav-active {
+  font-weight: 700 !important;
+  opacity: 1 !important;
+  border-bottom: 2px solid #8c6a4f; /* Added a small underline for better UX */
+  padding-bottom: 4px;
+}
+
+.heart {
+  color: #8b1a1a;
+  margin-left: 3px;
+}
+
+.nav-icon {
+  color: #8c6a4f;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.nav-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.705);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.overlay-card {
+    background-color: #F2ECE8;
+    padding: 40px;
+    border-radius: 12px;
+    border: 3px solid #9C7C5E;
+    max-height: 80%;
+    position: relative;
+}
+
+.overlay-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #9C7C5E;
 }
