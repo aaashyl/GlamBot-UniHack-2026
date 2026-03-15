@@ -7,6 +7,8 @@ import CeraveSerum from "../../assets/ceraveHydratingSerum.jpg";
 import LaRochePoSaySunscreen from "../../assets/LaRochePosaySunscreen.jpg";
 import AveneCleanser from "../../assets/AveneToleranceExtremelyGentleCleanser.jpg";
 import NavigationBar from "../NavigationBar/NavigationBar";
+import { Link } from "react-router-dom";
+
 
 const savedProducts = [
   { id: 1, name: "Hydrating Facial Cleanser - 473ml", brand: "CeraVe", category: "Cleanser", price: "$16.99", image: CeraveCleanser },
@@ -49,10 +51,14 @@ function SavedPage() {
             <h2 className="section-heading">Routines</h2>
             <div className="routines-grid">
               {savedRoutines.map((routine) => (
-                <button key={routine.id} className="routine-btn">
-                  {routine.name} <span className="routine-arrow">›</span>
-                </button>
-              ))}
+              <Link
+                key={routine.id}
+                to="/RoutinePage"
+                className="routine-btn"
+              >
+                {routine.name} <span className="routine-arrow">›</span>
+              </Link>
+            ))}
             </div>
           </section>
 
