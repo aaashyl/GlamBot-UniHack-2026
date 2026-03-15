@@ -1,6 +1,7 @@
 import "./RoutinePage.css";
 import SignInPage from "../SignInPage/SignInPage";
 import { useState } from "react";
+import NavigationBar from "../NavigationBar/NavigationBar";
 
 import rhodeCleanserImg from "../../assets/rhode-cleanser.jpg";
 import glowRecipeImg from "../../assets/glowreceipe.jpg";
@@ -131,33 +132,17 @@ function RoutinePage() {
   const [showLogin, setShowLogin] = useState(false);
 
   return (
-    <div className="routine-container">
+    <>
+      <NavigationBar /> 
 
-      <nav className="navbar">
-        <div className="navbar-inner">
-          <span className="nav-logo">GlamBot</span>
-          <div className="nav-links">
-            <a href="#">Discovery</a>
-            <a href="#" className="nav-active">
-              Saved <span className="heart">♥</span>
-            </a>
+      <div className="routine-container">
 
-            <a href="#" className="nav-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </nav>
+        <div className="routine-content">
 
-      <div className="routine-content">
+          <div className="routine-header">
+            <h1 className="routine-title">Meet your skincare routine....</h1>
 
-        <div className="routine-header">
-        <h1 className="routine-title">Meet your skincare routine....</h1>
-
-        <button
+            <button
             className="save-routine-btn"
             onClick={() => setShowLogin(true)}
         >
@@ -252,6 +237,7 @@ function RoutinePage() {
       )}
 
     </div>
+    </>
   );
 }
 

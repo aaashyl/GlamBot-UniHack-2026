@@ -1,18 +1,15 @@
-/* ── NAVBAR ── */
 .navbar {
-  /* We changed this to fixed or absolute so it sits on top of the homepage background */
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* High z-index to stay above background images */
+  z-index: 1000;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  /* Keep your original padding logic for centering content */
+  align-items: flex-end;
   padding: 18px calc((100% - 980px) / 2);
   box-sizing: border-box;
-  
+
   background: rgba(255, 250, 245, 0.55);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -20,18 +17,17 @@
 }
 
 .navbar-inner {
-  display: flex; /* Changed from contents to flex for better control */
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+  display: contents;
 }
 
 .nav-logo {
   font-family: "Playfair Display", serif;
-  font-size: 40px; /* Reduced slightly to fit better on laptop screens */
+  font-size: 60px;
   color: #6b4f35;
   font-weight: 700;
   letter-spacing: 2px;
+  line-height: 1;
+  padding-bottom: 2px;
 }
 
 .nav-links {
@@ -40,46 +36,12 @@
   gap: 40px;
 }
 
-/* IMPORTANT: Target both 'a' tags AND React Router links */
-.nav-links a, 
-.nav-links .nav-link-item { 
+.nav-links a {
   text-decoration: none;
   color: #8c6a4f;
-  font-size: 14px;
+  font-size: 17px;
   font-family: "Helvetica Neue", sans-serif;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   opacity: 0.7;
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
-.nav-links a:hover {
-  opacity: 1;
-}
-
-/* This matches the active state from our useState logic */
-.nav-active {
-  font-weight: 700 !important;
-  opacity: 1 !important;
-  border-bottom: 2px solid #8c6a4f; /* Added a small underline for better UX */
-  padding-bottom: 4px;
-}
-
-.heart {
-  color: #8b1a1a;
-  margin-left: 3px;
-}
-
-.nav-icon {
-  color: #8c6a4f;
-  display: flex;
-  align-items: center;
-  opacity: 0.7;
-  transition: 0.2s;
-}
-
-.nav-icon:hover {
-  opacity: 1;
-  transform: scale(1.1);
 }
