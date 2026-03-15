@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./SurveyPage.css";
 import background from "../../assets/background.jpg";
+import { Link, NavLink } from 'react-router-dom';
 
 const surveyQuestions = [
   {
@@ -191,11 +192,18 @@ export default function SurveyPage({ onComplete }) {
                     {i < surveyQuestions.length - 1 && <span className="dot-line" />}
                   </span>
                 ))}
+                <NavLink to="/HomePage">
+                    <button className="start-button">
+                        Complete Survey
+                    </button>
+                </NavLink>
               </div>
-            </div>
+            </div>s
           </>
         )}
       </div>
     </div>
   );
 }
+
+//export default SurveyPage;
