@@ -30,7 +30,7 @@ function NavigationBar() {
             </NavLink>
 
             <NavLink 
-              to="/SavedPaged" 
+              to="/SavedPage" 
               activeClassName="nav-active"
             >
               Saved <span className="heart">♥</span>
