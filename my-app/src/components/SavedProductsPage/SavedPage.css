@@ -126,6 +126,8 @@
   font-family: "Helvetica Neue", sans-serif;
   font-size: 22px;
   font-weight: 600;
+  text-align: left;
+  width: 100%;
   color: #8c6a4f;
   letter-spacing: 1px;
   margin: 0;
