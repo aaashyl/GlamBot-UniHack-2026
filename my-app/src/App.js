@@ -1,36 +1,37 @@
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import SurveyPage from "./components/SurveyPage/SurveyPage";
 import HomePage from "./components/HomePage/HomePage";
+import RoutinePage from "./components/RoutinePage/RoutinePage";
 import ProductDiscoveryPage from "./components/ProductDiscoveryPage/ProductDiscoveryPage";
 import SavedPage from "./components/SavedProductsPage/SavedPage";
 
 function App() {
   return (
-    <div className="App">
-      {/* The Switch ensures only one route renders at a time */}
-      <Switch>
-        
-        {/* Welcome Page is the default entry point */}
-        <Route exact path="/" component={WelcomePage} />
+    <Router>
+      <div className="App">
 
-        {/* Survey Page path */}
-        <Route path="/SurveyPage" component={SurveyPage} />
+        <Switch>
 
-        {/* Home Page path */}
-        <Route path="/HomePage" component={HomePage} />
+          <Route exact path="/" component={WelcomePage} />
 
-        {/* Saved Page path */}
-        <Route path="/SavedPaged" component={SavedPage} />
+          <Route path="/SurveyPage" component={SurveyPage} />
 
-        {/* Product Discovery Page path ! */}
-        <Route path="/ProductDiscoveryPage" component={ProductDiscoveryPage} />
+          <Route path="/HomePage" component={HomePage} />
 
-      </Switch>
-    </div>
+          <Route path="/RoutinePage" component={RoutinePage} />
+
+          <Route path="/ProductDiscoveryPage" component={ProductDiscoveryPage} />
+
+          <Route path="/SavedPage" component={SavedPage} />
+
+        </Switch>
+
+      </div>
+    </Router>
   );
 }
 
 export default App;
-
