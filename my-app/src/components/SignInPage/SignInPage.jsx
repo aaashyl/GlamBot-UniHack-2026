@@ -34,7 +34,7 @@ function SignInPage({ hideNavbar = false }) {
         }
 
         if (isValid) {
-            window.location.href = "/HomePage";
+            window.location.href = "/SavedPage";
         }
     };
 
